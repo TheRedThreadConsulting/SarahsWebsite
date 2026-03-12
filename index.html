@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The One - Old School Horizon</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- BEGIN: Custom Styling -->
+<style data-purpose="animations">
+    @keyframes subtle-pulse {
+      0%, 100% { transform: scale(1); filter: brightness(1) drop-shadow(0 0 20px rgba(255, 200, 100, 0.6)); }
+      50% { transform: scale(1.03); filter: brightness(1.1) drop-shadow(0 0 40px rgba(255, 220, 150, 0.8)); }
+    }
+    .animate-sun {
+      animation: subtle-pulse 6s ease-in-out infinite;
+    }
+    .glass-morphism {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .text-glow {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+  </style>
+<style data-purpose="layout-background">body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0c0c14;
+    /* Fallback */
+    }
+/* Natural sunset background styling */
+.hero-bg {
+    background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBrR6D9lt4Ux8gd8m0Ek2MWEVAW-ePfN3TxEAjDRdvZzvD0wUCp7xUokNGyPTjY_GJxRwJYQlUbtG3YBihSa3HrJ4bC-KY7RKJprNKuPuM7t22voWtNjnKbm4y59sihkBgNrbW7NfacEBQGZdh-y1UouHPBx-57lIXgZKxfrymhLyVRRgQPVlE9CHqOPoOzWbVPjxceZNWGj5v_9GG4j7PkCKf4MR72XmtfbHCxuTcPyZFvj10zWJyS_M4Mg6p1oNUEO3ejdtCWls6P);
+    background-size: cover;
+    background-position: center bottom;
+    height: 100vh;
+    width: 100vw;
+    position: relative
+    }
+/* Overlay for the dreamy atmospheric effect */
+.overlay-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(253, 187, 45, 0.3) 0%, rgba(0, 0, 0, 0) 50%);
+    pointer-events: none
+    }</style>
+<!-- END: Custom Styling -->
+</head>
+<body class="antialiased flex items-center justify-center font-sans">
+<!-- BEGIN: Hero Section -->
+<main class="hero-bg flex flex-col items-center justify-center px-6 text-center" data-purpose="landing-page-container">
+<div class="overlay-glow"></div>
+<!-- BEGIN: Central Interactive Element -->
+<div class="relative z-10 mb-12" data-purpose="sun-container">
+<!-- The Sun: Integrated, glowing, and high quality -->
+<button aria-label="Click the sun" class="animate-sun cursor-pointer focus:outline-none transition-transform active:scale-95" id="central-sun">
+<div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-t from-orange-400 via-yellow-200 to-white shadow-[0_0_100px_rgba(253,187,45,0.8)] border-b-4 border-orange-300 opacity-90 relative overflow-hidden">
+<!-- Subtle inner texture for high-quality look -->
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle,_#fff_10%,_transparent_70%)]"></div>
+</div>
+</button>
+</div>
+<!-- END: Central Interactive Element -->
+<!-- BEGIN: Call to Action -->
+<section class="z-20 w-full max-w-sm" data-purpose="cta-section">
+<button class="glass-morphism w-full py-6 px-4 rounded-2xl shadow-2xl transition-all hover:bg-white/20 active:bg-white/30 group" data-purpose="main-button">
+<div class="flex flex-col items-center gap-2">
+<!-- First line of text -->
+<p class="text-white text-lg font-medium tracking-wide text-glow">
+            123. You are the one otherwise is sarah
+          </p>
+<!-- Separator Line -->
+<div class="w-12 h-px bg-white/30 my-1 group-hover:w-24 transition-all duration-500"></div>
+<!-- Second line of text -->
+<p class="text-white/80 text-sm font-light uppercase tracking-[0.2em]">
+            The one joined the picture of the store
+          </p>
+</div>
+</button>
+<!-- Old school hint / Navigation -->
+<nav class="mt-8 flex justify-center gap-6 opacity-60 text-white text-xs tracking-widest uppercase">
+<a class="hover:underline" href="#">Home</a>
+<span class="text-white/30">/</span>
+<a class="hover:underline" href="#">Archive</a>
+<span class="text-white/30">/</span>
+<a class="hover:underline" href="#">Contact</a>
+</nav>
+</section>
+<!-- END: Call to Action -->
+</main>
+<!-- END: Hero Section -->
+<!-- BEGIN: Interactivity Script -->
+<script data-purpose="interaction-handlers">
+    document.getElementById('central-sun').addEventListener('click', function() {
+      // Small feedback effect on click
+      console.log('Sun clicked - nostalgia activated.');
+      this.style.filter = 'brightness(1.5) contrast(1.2)';
+      setTimeout(() => {
+        this.style.filter = '';
+      }, 200);
+    });
+  </script>
+<!-- END: Interactivity Script -->
+</body></html>
